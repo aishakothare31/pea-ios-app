@@ -120,7 +120,7 @@ export default class AddListing extends Component {
                <View style = {styles.Heading}>
                    <View style = {styles.Titles}>
                        <View style = {{width : 600}}>
-                        <Text style = {styles.words}>New Listings </Text>
+                        <Text style = {styles.words}>New Listing</Text>
                         </View>
                    </View>
                    <View style = {styles.closing}>
