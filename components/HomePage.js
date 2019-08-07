@@ -3,6 +3,7 @@ import {Text, View, AppRegistry, StyleSheet, ScrollView} from 'react-native';
 import HeaderComponent from './HeaderComponent';
 import NavBar from './NavBar';
 import Filters from './Filters';
+import Listings from './Listings';
 import { NativeRouter } from 'react-router-native';
 
 
@@ -19,6 +20,9 @@ export default class HomePage extends Component {
                 </View>
                 <View>
                     <Filters />
+                </View>
+                <View>
+                    <Listings />
                 </View>
                 </ScrollView>
             </NativeRouter>

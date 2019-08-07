@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Text, View, StyleSheet, AppRegistry, Image, Button, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { NativeRouter } from "react-router-native";
-import Dialog, { DialogContent, SlideAnimation, ScaleAnimation } from 'react-native-popup-dialog';
+import Dialog, { DialogContent, SlideAnimation, ScaleAnimation, DialogFooter, DialogButton } from 'react-native-popup-dialog';
 import CheckboxFormX from 'react-native-checkbox-form';
 const DownArrow = require('../icons/down-arrow.png');
 
@@ -249,6 +249,17 @@ export default class Filters extends Component {
 
                                 <Dialog
                                     visible={this.state.mainVisible}
+                                    footer={
+                                        <DialogFooter>
+                                          <DialogButton
+                                            text="APPLY"
+                                            textStyle={{ color: '#C94343' }}
+                                            onPress={() => {
+                                                this.setState({ mainVisible: false });
+                                            }}
+                                          />
+                                        </DialogFooter>
+                                    }
                                     dialogAnimation={new SlideAnimation({
                                         slideFrom: 'bottom',
                                       })}
@@ -283,6 +294,17 @@ export default class Filters extends Component {
                                             </TouchableHighlight>
                                             <Dialog
                                                 visible={this.state.needVisible}
+                                                footer={
+                                                    <DialogFooter>
+                                                      <DialogButton
+                                                        text="APPLY"
+                                                        textStyle={{ color: '#C94343' }}
+                                                        onPress={() => {
+                                                            this.setState({ needVisible: false });
+                                                        }}
+                                                      />
+                                                    </DialogFooter>
+                                                }
                                                 dialogAnimation={new ScaleAnimation({
                                                     initialValue: 0, // optional
                                                     useNativeDriver: true, // optional
@@ -306,16 +328,6 @@ export default class Filters extends Component {
                                                             />
                                                         </View>
                                                         </View>
-                                                        <TouchableOpacity style = {styles.ButtonEffects}>
-                                                            <Button 
-                                                            title='APPLY' 
-                                                            color = '#C94343' 
-                                                            style = {styles.ButtonEffects}
-                                                            onPress={() => {
-                                                                this.setState({ needVisible: false });
-                                                            }}
-                                                            />
-                                                        </TouchableOpacity>
                                                     </DialogContent>
                                             </Dialog>
 
@@ -329,6 +341,17 @@ export default class Filters extends Component {
 
                                             <Dialog
                                                 visible={this.state.typeVisible}
+                                                footer={
+                                                    <DialogFooter>
+                                                      <DialogButton
+                                                        text="APPLY"
+                                                        textStyle={{ color: '#C94343' }}
+                                                        onPress={() => {
+                                                            this.setState({ typeVisible: false });
+                                                        }}
+                                                      />
+                                                    </DialogFooter>
+                                                }
                                                 dialogAnimation={new ScaleAnimation({
                                                     initialValue: 0, // optional
                                                     useNativeDriver: true, // optional
@@ -352,16 +375,6 @@ export default class Filters extends Component {
                                                             />
                                                         </View>
                                                         </View>
-                                                        <TouchableOpacity style = {styles.ButtonEffects}>
-                                                            <Button 
-                                                            title='APPLY' 
-                                                            color = '#C94343' 
-                                                            style = {styles.ButtonEffects}
-                                                            onPress={() => {
-                                                                this.setState({ typeVisible: false });
-                                                            }}
-                                                            />
-                                                        </TouchableOpacity>
                                                     </DialogContent>
                                             </Dialog>
 
@@ -374,6 +387,17 @@ export default class Filters extends Component {
                                             </TouchableHighlight>
                                             <Dialog
                                                 visible={this.state.priceVisible}
+                                                footer={
+                                                    <DialogFooter>
+                                                      <DialogButton
+                                                        text="APPLY"
+                                                        textStyle={{ color: '#C94343' }}
+                                                        onPress={() => {
+                                                            this.setState({ priceVisible: false });
+                                                        }}
+                                                      />
+                                                    </DialogFooter>
+                                                }
                                                 dialogAnimation={new ScaleAnimation({
                                                     initialValue: 0, // optional
                                                     useNativeDriver: true, // optional
@@ -413,16 +437,6 @@ export default class Filters extends Component {
                                                         </View>
 
                                                         </View>
-                                                        <TouchableOpacity style = {styles.ButtonEffects}>
-                                                            <Button 
-                                                            title='APPLY' 
-                                                            color = '#C94343' 
-                                                            style = {styles.ButtonEffects}
-                                                            onPress={() => {
-                                                                this.setState({ priceVisible: false });
-                                                            }}
-                                                            />
-                                                        </TouchableOpacity>
                                                     </DialogContent>
                                             </Dialog>
                                             <TouchableHighlight 
@@ -434,6 +448,17 @@ export default class Filters extends Component {
                                             </TouchableHighlight>
                                             <Dialog
                                                 visible={this.state.carpetVisible}
+                                                footer={
+                                                    <DialogFooter>
+                                                      <DialogButton
+                                                        text="APPLY"
+                                                        textStyle={{ color: '#C94343' }}
+                                                        onPress={() => {
+                                                            this.setState({ carpetVisible: false });
+                                                        }}
+                                                      />
+                                                    </DialogFooter>
+                                                }
                                                 dialogAnimation={new ScaleAnimation({
                                                     initialValue: 0, // optional
                                                     useNativeDriver: true, // optional
@@ -446,33 +471,9 @@ export default class Filters extends Component {
                                                         <View style = {styles.DialogOpt}>
                                                         </View>
                                                         </View>
-                                                        <TouchableOpacity style = {styles.ButtonEffects}>
-                                                            <Button 
-                                                            title='APPLY' 
-                                                            color = '#C94343' 
-                                                            style = {styles.ButtonEffects}
-                                                            onPress={() => {
-                                                                this.setState({ carpetVisible: false });
-                                                            }}
-                                                            />
-                                                        </TouchableOpacity>
                                                     </DialogContent>
                                             </Dialog>
                                         </View>
-                                        </View>
-                                        {/* Main Apply button */}
-
-                                        <View>
-                                            <TouchableOpacity style = {styles.ButtonEffects}>
-                                                <Button 
-                                                title='APPLY' 
-                                                color = '#C94343' 
-                                                style = {styles.ButtonEffects}
-                                                onPress={() => {
-                                                    this.setState({ mainVisible: false });
-                                                    }}
-                                                />
-                                            </TouchableOpacity>
                                         </View>
                                     </DialogContent>
                                 </Dialog>
