@@ -8,11 +8,12 @@ import AddListing from './components/AddListing';
 import DeleteListing from './components/DeleteListing';
 import CompletedListings from './components/CompletedListings';
 import Notifications from './components/Notifications';
-import { addListing } from './actions/listings';
+import { addListing, removeListing, editListing } from './actions/listings';
 
 const store = configureStore();
 
 store.dispatch(addListing({
+  id:1,
   name: 'abc', 
   need: 'rent', 
   price: 2900123, 
@@ -21,12 +22,21 @@ store.dispatch(addListing({
 }));
 
 store.dispatch(addListing({
+  id:2,
   name: 'nkner', 
   need: 'sell', 
   price: 3428979842, 
   agency: 'Direct', 
   contact: '42342782'
 }));
+
+store.dispatch(editListing(
+  id = 1,
+  {
+    name: 'diccc',
+    need: 'pusszzzzz' 
+  }
+))
 
 export default class App extends Component {
   render(){

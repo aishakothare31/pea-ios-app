@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Text, View, AppRegistry, StyleSheet, ScrollView} from 'react-native';
+import {Text, View, AppRegistry, StyleSheet, ScrollView, TouchableOpacity, Button} from 'react-native';
 import { connect } from 'react-redux';
+import { removeListing } from '../actions/listings';
 
 export class Listing extends Component {
     constructor(props) {
@@ -9,16 +10,21 @@ export class Listing extends Component {
 
     render() {
 
-        const {name, need, price, agency, contact} = this.props;
+        const {dispatch, id, name, need, price, agency, contact} = this.props;
 
         return (
             <View style={styles.Container}>
                 <View style={styles.Listing}>
                     <Text style={styles.Name}>{name}</Text>
-                    <Text>{need}</Text>
-                    <Text>{price}</Text>
-                    <Text>{agency}</Text>
-                    <Text>{contact}</Text>
+                    <View style={styles.Data}>
+                        <Text>{need}</Text>
+                        <Text>{price}</Text>
+                        <Text>{agency}</Text>
+                        <Text>{contact}</Text>
+                    </View>
+                    <TouchableOpacity>
+                        <Button title="X" onPress={() => dispatch(removeListing({ id }))} />
+                    </TouchableOpacity>
                 </View>
             </View>
         );
@@ -42,6 +48,12 @@ const styles = StyleSheet.create({
         color: '#C94343',
         fontWeight: 'bold',
         letterSpacing: 0.7,
+    },
+
+    Data: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'flex-start',
     },
 });
 

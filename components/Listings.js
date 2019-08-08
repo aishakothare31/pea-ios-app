@@ -14,7 +14,7 @@ export class Listings extends Component {
             <View>
                 <View style={styles.Container}>
                     {this.props.listings.map((listing) => {
-                        return <Listing {...listing} />;
+                        return <Listing key={listing.id} {...listing} />;
                     })}
                 </View>
             </View>
@@ -30,8 +30,8 @@ const mapStateToProps = (state) => {
 
 const styles = StyleSheet.create({
     Container: {
-        marginLeft: 10,
-        marginRight: 10,
+        margin: 10,
+        
     },
 });
 
